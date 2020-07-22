@@ -22,12 +22,16 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.example.domain.ProductVO;
 import com.example.mapper.ProductMapper;
+import com.example.service.ProductService;
 
 @Controller
 @RequestMapping("/product")
 public class ProductController {
 	@Autowired
 	ProductMapper pmapper;
+	
+	@Autowired
+	ProductService pService;
 	
 	@RequestMapping("/list")
 	public void list(Model model) {
@@ -57,7 +61,7 @@ public class ProductController {
 	         file.transferTo(new File(path+File.separator+ image));
 	         vo.setImage(image);
 	      }
-	      //첨부파일업로드
+	      
 	      List<MultipartFile> files = multi.getFiles("files");
 	      ArrayList<String> images= new ArrayList<String>();
 	      for(MultipartFile addFile:files) {
@@ -69,7 +73,7 @@ public class ProductController {
 	      }
 	      vo.setImages(images);
 	      System.out.println(vo.toString());
-	      service.insert(vo);
+	      pService.insert(vo);
 	      return "redirect:list";
 	   }
 	
@@ -77,7 +81,7 @@ public class ProductController {
 	@ResponseBody
 	public ResponseEntity<byte[]> display(String fileName) throws Exception {
 		ResponseEntity<byte[]> result = null;
-		// display fileName이 있는 경우
+		// display fileName�씠 �엳�뒗 寃쎌슦
 		if (!fileName.equals("")) {
 			File file = new File(path + File.separator + fileName);
 			HttpHeaders header = new HttpHeaders();

@@ -16,11 +16,11 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public void insert(ProductVO vo) {
 		pmapper.insert(vo);
-		// 첨부파일이 있으면 Inert
+		
 		ArrayList<String> images = vo.getImages();
 		if (images.size() > 0) {
 			for (String image : images) {
-				pmapper.attachInsert(image, vo.getP_no());
+				pmapper.attachInsert(vo.getP_no(), image);
 			}
 		}
 	}
