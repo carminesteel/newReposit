@@ -44,24 +44,33 @@ body {
 <body style="padding-top: 73px; margin-left: 0px; width: 100%;">
 	<jsp:include page="../menu.jsp"></jsp:include>
 	<h1>Product Insert</h1>
-	<form name="frm" action="insert" method="post"
-		enctype="multipart/form-data">
-		id입력 <input type=text name=user_id size=10> 제목을 입력하세요 <input
-			type=text name=title size=10><br>
+	
+	<form name="frm" action="insert" method="post" enctype="multipart/form-data">
+		
+		id입력 <input type=text name=id size=10> 
+		제목을 입력하세요 <input type=text name=title size=10><br>
+		
 		<h1>이미지 업로드하셈</h1>
-		<br> 대표이미지 <input type="file" name="file"> <img
-			id="image" src="http://placehold.it/100x100" width=300><br>
-		상세이미지 <input type="button" id="btnImage" value="상품이미지"> <input
-			type="file" name="files" accept="image/*" multiple>
+		<br>
+		
+		대표이미지 <input type="file" name="file">		
+		<img id="image" src="http://placehold.it/100x100" width=300><br>
+		
+		상세이미지 <input type="button" id="btnImage" value="상품이미지">
+		<input type="file" name="files" accept="image/*" multiple>
+		
 		<div id="listFile"></div>
-		<br> 상품 설명
+		<br> 
+		상품 설명
 		<textarea name=content cols=100 rows=10></textarea>
-		<br> 가격 <input type="text" name="price">원
-	</form>
-	<div></div>
+		<br> 
+		가격 <input type="text" name="price">원
+	
+	
 	<input type="submit" value="저장">
 	<input type="reset" value="취소">
 	<input type="button" value="목록" id="buttonList">
+	</form>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 

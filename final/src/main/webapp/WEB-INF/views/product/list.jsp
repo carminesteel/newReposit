@@ -29,10 +29,12 @@
 	<script id="temp" type="text/x-handlebars-template">
 		{{#each .}}
 			<div class="box">
-				<div class="image"><img src="{{image}}"/></div>
+				<input type="hidden" value="{{p_no}}" class="p_no">
+				<div class="image"><img src="/display?fileName={{image}}"/></div>
 				<div class="title">{{title}}</div>
 				<div class="price">{{price}}</div>
 				<div class="content">{{content}}</div>
+				<div class="id" style="display:none">{{id}}</div>
 			</div>
 		{{/each}}
 	</script>
@@ -43,6 +45,13 @@
 
 <script>
 	getList();
+	
+	$("#tab").on("click", ".image", function(){		
+		var p_no=$(this).parent().find(".p_no").val();
+		var id=$(this).parent().find(".id").html();
+		alert(id)
+		location.href="/product/read?p_no="+p_no+"&id="+id;
+	});
 	
 	function getList(){
 		$.ajax({

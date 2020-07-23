@@ -44,16 +44,24 @@ public class ProductController {
 		return pmapper.productList();
 	}
 	
-	@RequestMapping(value = "/insert", method = RequestMethod.GET)
-	public void insert(){
+	@RequestMapping("/read")
+	public void read(Model model, int p_no, String id) {
+		pmapper.updateViewCnt(id);
+		model.addAttribute("read", pmapper.read(p_no));	
+		model.addAttribute("imageread", pmapper.imageread(p_no));
 		
+	}
+	
+	
+	@RequestMapping(value = "/insert", method = RequestMethod.GET)
+	public void insert(){		
 	}
 	
 	@Resource(name="uploadPath")
 	private String path;
 
 	@RequestMapping(value="/insert", method=RequestMethod.POST)
-	   public String insertPost(ProductVO vo,MultipartHttpServletRequest multi)throws Exception {
+	   public String insertPost(ProductVO vo, MultipartHttpServletRequest multi)throws Exception {
 
 	      MultipartFile file = multi.getFile("file");
 	      if(!file.isEmpty()) {
@@ -81,7 +89,7 @@ public class ProductController {
 	@ResponseBody
 	public ResponseEntity<byte[]> display(String fileName) throws Exception {
 		ResponseEntity<byte[]> result = null;
-		// display fileName�씠 �엳�뒗 寃쎌슦
+		// display fileName占쎌뵠 占쎌뿳占쎈뮉 野껋럩�뒭
 		if (!fileName.equals("")) {
 			File file = new File(path + File.separator + fileName);
 			HttpHeaders header = new HttpHeaders();
@@ -90,8 +98,4 @@ public class ProductController {
 		}
 		return result;
 	}
-	
-	
-	
-	
 }

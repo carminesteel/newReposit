@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class ProductVO {
 	private int p_no;
-	private String user_id;
+	private String id;
 	private String title;
 	private String content;
 	private String image;
@@ -28,11 +28,11 @@ public class ProductVO {
 	public void setP_no(int p_no) {
 		this.p_no = p_no;
 	}
-	public String getUser_id() {
-		return user_id;
+	public String getId() {
+		return id;
 	}
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getTitle() {
 		return title;
@@ -82,12 +82,13 @@ public class ProductVO {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
 	@Override
 	public String toString() {
-		return "ProductVO [p_no=" + p_no + ", user_id=" + user_id + ", title=" + title + ", content=" + content
-				+ ", image=" + image + ", price=" + price + ", view=" + view + ", p_like=" + p_like + ", report="
-				+ report + ", date=" + date + ", images=" + images + "]";
+		return "ProductVO [p_no=" + p_no + ", id=" + id + ", title=" + title + ", content=" + content + ", image="
+				+ image + ", price=" + price + ", view=" + view + ", p_like=" + p_like + ", report=" + report
+				+ ", date=" + date + ", images=" + images + "]";
 	}
+	
+
 	
 }

@@ -170,11 +170,11 @@ li {
    
    <div id=banner class="gallery-wrapper">
       <ul class="gallery-list">
-      <li><a href="#none"><img class=slide src="/display?fileName=classicblue.png"alt="" /></a></li>
-      <li><a href="#none"><img class=slide src="/display?fileName=recolor.png" alt="" /></a></li>
-      <li><a href="#none"><img class=slide src="/display?fileName=gradients.png" alt="" /></a></li>
-      <li><a href="#none"><img class=slide src="/display?fileName=pantone.png" alt="" /></a></li>
-      <li><a href="#none"><img class=slide src="/display?fileName=glowing.png" alt="" /></a></li>
+      <li><a href=""><img class=slide src="/display?fileName=classicblue.png"alt="" /></a></li>
+      <li><a href=""><img class=slide src="/display?fileName=recolor.png" alt="" /></a></li>
+      <li><a href=""><img class=slide src="/display?fileName=gradients.png" alt="" /></a></li>
+      <li><a href=""><img class=slide src="/display?fileName=pantone.png" alt="" /></a></li>
+      <li><a href=""><img class=slide src="/display?fileName=glowing.png" alt="" /></a></li>
    </ul>
    <a class="btn-prev" href="#none"><img src="/display?fileName=arrowLeft.png"/></a>
    <a class="btn-next" href="#none"><img src="/display?fileName=arrowRight.png"/></a>
